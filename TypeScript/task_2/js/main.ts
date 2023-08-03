@@ -60,5 +60,5 @@ function executeWork(employee: DirectorInterface | TeacherInterface) {
   return result;
 }
 
-executeWork(createEmployee(200));
-executeWork(createEmployee(1000));
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
