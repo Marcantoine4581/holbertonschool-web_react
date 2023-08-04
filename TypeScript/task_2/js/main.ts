@@ -50,7 +50,7 @@ function isDirector(employee: DirectorInterface | TeacherInterface): employee is
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
-function executeWork(employee: DirectorInterface | TeacherInterface) {
+function executeWork(employee: DirectorInterface | TeacherInterface): string {
   let result: string = '';
   if (isDirector(employee)) {
     result = employee.workDirectorTasks();
@@ -60,5 +60,18 @@ function executeWork(employee: DirectorInterface | TeacherInterface) {
   return result;
 }
 
-console.log(executeWork(createEmployee(200)));
-console.log(executeWork(createEmployee(1000)));
+/* console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000))); */
+
+type Subjects = 'Math' | 'History';
+
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math'
+  } else if (todayClass === 'History') {
+    return 'Teaching History'
+  }
+}
+
+console.log(teachClass('Math'));
+console.log(teachClass('History'));
